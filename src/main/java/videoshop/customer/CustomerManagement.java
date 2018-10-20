@@ -23,6 +23,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
+
 /**
  * @author Oliver Gierke
  */
@@ -57,7 +58,11 @@ public class CustomerManagement {
 		Assert.notNull(form, "Registration form must not be null!");
 
 		UserAccount userAccount = userAccounts.create(form.getName(), form.getPassword(), Role.of("ROLE_CUSTOMER"));
-
+		
+		CustomerMail email = new CustomerMail();
+		email.setReciever(form.getEmail());
+		email.sendMsg();
+		
 		return customers.save(new Customer(userAccount, form.getEmail(), form.getAddress()));
 	}
 

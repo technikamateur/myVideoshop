@@ -40,7 +40,7 @@
         
         <div class="field">
             <label for="email">E-Mail Adresse</label>
-            <input id="email" name="email" th:field="*{email}" th:errorclass="fieldError" type="text" required="required"/><br/>
+            <input id="email" name="email" th:field="*{email}" th:errorclass="fieldError" type="email" required="required"/><br/>
             <div class="ui negative message" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">
                 <p>Die E-Mail darf nicht leer sein.</p>
             </div>
