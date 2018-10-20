@@ -58,7 +58,7 @@ public class CustomerManagement {
 
 		UserAccount userAccount = userAccounts.create(form.getName(), form.getPassword(), Role.of("ROLE_CUSTOMER"));
 
-		return customers.save(new Customer(userAccount, form.getAddress()));
+		return customers.save(new Customer(userAccount, form.getEmail(), form.getAddress()));
 	}
 
 	/**

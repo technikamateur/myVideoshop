@@ -33,6 +33,7 @@ public class Customer {
 	private @Id @GeneratedValue long id;
 
 	private String address;
+	private String email;
 
 	// (｡◕‿◕｡)
 	// Jedem Customer ist genau ein UserAccount zugeordnet, um später über den UserAccount an den Customer zu kommen,
@@ -43,8 +44,9 @@ public class Customer {
 	@SuppressWarnings("unused")
 	private Customer() {}
 
-	public Customer(UserAccount userAccount, String address) {
+	public Customer(UserAccount userAccount, String email, String address) {
 		this.userAccount = userAccount;
+		this.email = email;
 		this.address = address;
 	}
 
@@ -55,7 +57,11 @@ public class Customer {
 	public String getAddress() {
 		return address;
 	}
-
+	
+	public String getEmail() {
+		return email;
+	}
+	
 	public void setAddress(String address) {
 		this.address = address;
 	}
