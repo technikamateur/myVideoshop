@@ -23,6 +23,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 
+import videoshop.customer.CustomerNewNewMail;
+
 /**
  * The central application class to configure the Spring container and run the application.
  *
@@ -35,6 +37,8 @@ public class VideoShop {
 
 	public static void main(String[] args) {
 		SpringApplication.run(VideoShop.class, args);
+		
+		//new CustomerNewNewMail(new JavaMailSender());
 	}
 
 	@Configuration
